@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Todo from './pages/Todo';
 import reportWebVitals from './reportWebVitals';
+import Login from './pages/Login';
+import {BrowserRouter as Router , Routes , Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/todo' element={<Todo/>}/>
+      </Routes>
+    </Router>
+    
+    
   </React.StrictMode>
 );
 
